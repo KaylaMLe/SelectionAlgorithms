@@ -1,0 +1,22 @@
+# assumes ascending order
+def merge_sort(list):
+    if length(list) == 1:
+        return list
+    
+    listA = merge_sort(first_half(list))
+    listB = merge_sort(second_half(list))
+
+    return merge(listA, listB)
+    
+def merge(listA, listB):
+    mergeLength = listA.length + listB.length
+
+    for (int i = 0; i < mergeLength; i++):
+        insert_front(merged, min(listA[i], listB[i]))
+        pop(min(listA[i], listB[i]))
+
+        if (length(listA) == 0 or length(listB) == 0):
+            merged += nonzeroList
+
+    return merged
+

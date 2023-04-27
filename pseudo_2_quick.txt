@@ -1,0 +1,24 @@
+def quick_select(k, list):
+    quick_split(k, list, 0, length(list))
+
+    return list[k]
+
+def quick_split(k, list, rangeMin, rangeMax):
+    if rangeMax > rangeMin:
+        partitionInd = partition(list, rangeMin, rangeMax)
+
+        if partitionInd < k:
+            quick_split(list, partitionInd, rangeMax)
+        else if partitionInd > k:
+            quick_split(list, rangeMin, partitionInd)
+        
+def partition(list, rangeMin, rangeMax):
+    pivot = ((rangeMax - rangeMin) / 2) + rangeMin
+    partitionInd = rangeMin
+
+    for (i = rangeMin; i < rangeMax; i++):
+        if list[i] < pivot:
+            swap(list[partitionInd], list[i])
+            partitionInd += 1
+
+    return partitionInd

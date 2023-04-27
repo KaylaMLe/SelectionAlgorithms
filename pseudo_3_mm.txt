@@ -1,0 +1,28 @@
+def median_medians(k, list):
+    for (i = 5; i < length(list); i += 5):
+        segment = sort(list[i-5:i])
+        medians.append(segment[length(segment) / 2])
+        
+        if length(list) < (i + 5):
+            segment = sort(list[i:length(list)])
+            segments.append(segment[length(segment) / 2])
+
+    if length(medians) > 5:
+        pivot = median_medians(len(medians) / 2, medians)
+    else:
+        sort(medians)
+        pivot = medians[length(medians) / 2]
+
+    for element in list:
+        if element < pivot:
+            listA.append(element)
+        else:
+            listB.append(element)
+
+    if length(listA) == k:
+        return pivot
+    else if length(listA) < k:
+        return median_medians(k, listA)
+    else:
+        return median_medians(k, listB)
+
